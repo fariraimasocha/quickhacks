@@ -1,10 +1,10 @@
 import React from 'react'
-import createHack from '@/components/CreateHack'
+import CreateHack from '@/components/CreateHack'
 
 function page() {
     return (
-        <div>
-            <createHack />
+        <div className='mt-40 flex justify-center'>
+            <CreateHack />
         </div>
     )
 }
