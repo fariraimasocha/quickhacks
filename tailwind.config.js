@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Inter var", "system-ui"],
+        akaya: ["Akaya kanadaka", "cursive"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

@@ -14,3 +14,4 @@ const hackSchema = new mongoose.Schema({
 const Hack = mongoose.model.Hack || mongoose.model("Hack", hackSchema);
 
 export default Hack;
+
