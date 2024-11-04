@@ -1,19 +1,32 @@
-"use client"
-
 'use client'
 
 import { useState } from 'react'
 
 export default function Component() {
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [message, setMessage] = useState('')
+    const [title, setTitle] = useState('')
+    const [description, setDescription] = useState('')
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log({ name, email, message })
-    }
 
+        try {
+            const response = await fetch('/api/hack', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ title, description })
+            })
+
+            if (response.ok) {
+                console.log('Hack submitted successfully')
+            } else {
+                console.log('Failed to submit hack')
+            }
+        } catch (error) {
+            console.error('An error occurred while submitting the hack:', error)
+        }
+    }
     return (
         <div className="flex items-center justify-center font-akaya">
             <div className="w-full max-w-3xl overflow-hidden">
@@ -31,21 +44,21 @@ export default function Component() {
                         <input
                             id="title"
                             type="text"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
                             placeholder="Enter the title"
                             className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
                             required
                         />
                     </div>
                     <div className="space-y-2">
-                        <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                        <label htmlFor="description" className="block text-sm font-medium text-gray-700">
                             Description
                         </label>
                         <textarea
                             id="message"
-                            value={message}
-                            onChange={(e) => setMessage(e.target.value)}
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
                             placeholder="Enter the description"
                             className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 min-h-[100px]"
                             required
