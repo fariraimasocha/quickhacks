@@ -29,9 +29,9 @@ export default function Header() {
 
     return (
         <header className='fixed inset-x-0 top-0 z-50 bg-background/75 py-3 backdrop-blur-sm flex justify-center text-gray-800 mt-5'>
-            <nav className='container flex max-w-3xl items-center justify-between bg-white py-3 px-3 rounded-md shadow-md'>
+            <nav className='container flex max-w-3xl py-0.5 items-center justify-between bg-white px-3 rounded-md shadow-md'>
                 <div>
-                    <button className='transition-colors font-akaya rounded-md hover:text-foreground text-white bg-gray-800 px-3 py-2'>
+                    <button className='transition-colors font-akaya rounded-md hover:text-foreground text-white bg-gray-800 px-5 py-3'>
                         Add Hack
                     </button>
                 </div>
