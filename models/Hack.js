@@ -9,6 +9,10 @@ const hackSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    user: {
+        type: String,
+        required: true,
+    }
 });
 
 const Hack = mongoose.models.Hack || mongoose.model("Hack", hackSchema);

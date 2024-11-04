@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 export default function Component() {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
+    const [user, setUser] = useState('fariraijames')
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -16,7 +17,7 @@ export default function Component() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ title, description })
+                body: JSON.stringify({ title, description, user })
             })
 
             if (response.ok) {
@@ -25,6 +26,7 @@ export default function Component() {
                     title: 'Success!',
                     text: 'Your hack has been submitted successfully.',
                     icon: 'success',
+                    position: 'top-end',
                 })
 
             } else {
@@ -33,6 +35,7 @@ export default function Component() {
                     title: 'Error!',
                     text: 'An error occurred while submitting the hack.',
                     icon: 'error',
+
                 })
             }
         } catch (error) {
@@ -50,6 +53,22 @@ export default function Component() {
                     </p>
                 </div>
                 <form onSubmit={handleSubmit} className="p-6 pt-0 space-y-4">
+
+                    <div className="space-y-2">
+                        <label htmlFor="user" className="block text-sm font-medium text-gray-700">
+                            Name
+                        </label>
+                        <input
+                            id="user"
+                            type="text"
+                            value={user}
+                            onChange={(e) => setUser(e.target.value)}
+                            placeholder="Enter your name"
+                            className="w-full px-3 py-2 border border-gray-300 text-gray-500 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                            required
+                        />
+                    </div>
+
                     <div className="space-y-2">
                         <label htmlFor="title" className="block text-sm font-medium text-gray-700">
                             Title
