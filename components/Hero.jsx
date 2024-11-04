@@ -6,7 +6,7 @@ export default function Hero() {
         <div>
             <section className='mt-20'>
                 <div className='container max-w-3xl'>
-                    <h1 className='text-5xl font-bold font-akaya text-gray-800 text-center'>Top 50 programming hacks chosen by internet and you</h1>
+                    <h1 className='text-5xl font-bold font-akaya text-gray-800 text-center'>Top 50 programming hacks chosen by the internet and you</h1>
                     <p className='mt-5 text-2xl text-center font-akaya text-gray-700'>
                         Give your favourites an <span className='text-gray-800 underline decoration-orange-500'>Upvote</span> and a < span className='text-gray-800 underline decoration-orange-500'>Comment</span>. Write as best you can. No account is required!
                     </p>
