@@ -11,7 +11,7 @@ const hackSchema = new mongoose.Schema({
     },
 });
 
-const Hack = mongoose.model.Hack || mongoose.model("Hack", hackSchema);
+const Hack = mongoose.models.Hack || mongoose.model("Hack", hackSchema);
 
 export default Hack;
 
