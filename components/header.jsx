@@ -1,6 +1,5 @@
 "use client"
 
-import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useState } from "react"
 
@@ -26,9 +25,11 @@ export default function Header() {
         fetchContributors()
     }, [])
 
+    console.log(contributors);
+
     return (
         <header className='fixed inset-x-0 top-0 z-50 bg-background/75 py-3 backdrop-blur-sm flex justify-center text-gray-800 mt-5'>
-            <nav className='container flex max-w-3xl items-center justify-between bg-white py-3 px-7 rounded-md shadow-md'>
+            <nav className='container flex max-w-3xl items-center justify-between bg-white py-3 px-3 rounded-md shadow-md'>
                 <div>
                     <button className='transition-colors font-akaya rounded-md hover:text-foreground text-white bg-gray-800 px-3 py-2'>
                         Add Hack
@@ -40,11 +41,21 @@ export default function Header() {
                 </div>
 
                 <div>
-                    <Link href='/' className=''>
-                        <Image src='/icon.svg' alt='Logo' width={40} height={40} />
-                    </Link>
+                    {contributors.length > 0 && (
+                        <div className="flex items-center font-akaya">
+                            <Image
+                                src={contributors[0].avatar_url}
+                                alt={contributors[0].login}
+                                width={64}
+                                height={64}
+                                className="h-16 w-16 border-2 border-primary rounded-full"
+                                priority
+                            />
+                            <span className="ml-2">by {contributors[0].login}</span>
+                        </div>
+                    )}
                 </div>
             </nav>
         </header>
     )
-}
+} 
