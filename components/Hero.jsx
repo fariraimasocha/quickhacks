@@ -12,7 +12,7 @@ export default function Hero() {
                     </p>
                     <div className='flex justify-center mt-8'>
                         <div className='rounded bg-white text-gray-800 font-akaya shadow-md py-4 px-4 flex items-center'>
-                            <Image src='/fire.gif' alt='Fire Emoji' width={20} height={20} />
+                            <Image src='/fire.gif' alt='Fire Emoji' width={20} height={20} priority />
                             <h2 className='mr-2'>#Part of the Quick family</h2>
                         </div>
                     </div>
