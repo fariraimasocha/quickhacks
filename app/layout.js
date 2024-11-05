@@ -2,22 +2,30 @@ import "./globals.css";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 
+export const metadata = {
+  title: "QuickHacks",
+  description:
+    "The place to share programming hacks as developers",
+  icons: {
+    icon: "/favicon/favicon.png",
+  },
+  keywords: "QuickHacks, open source, Programming hacks, product building, free tools",
+  openGraph: {
+    title: "QuickHacks",
+    description:
+      "The place to share programming hacks as developers",
+    image: "/landing/quickhacks.png",
+  },
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon.png" />
-        <meta property="og:title" content="QuickHacks" />
-        <meta property="og:description" content="The place to share programming hacks as developers" />
-        <meta property="og:image" content="/landing/quickhacks.png" />
-      </head>
-      <body
-        className='bg-gray-100'
-      >
+      <body className='bg-gray-100'>
         <Header />
         <main className='grow'>{children}</main>
         <Footer />
       </body>
-    </html >
+    </html>
   );
 }
