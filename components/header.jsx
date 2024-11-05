@@ -46,24 +46,26 @@ export default function Header() {
                     </div>
                 </Link>
 
-                <div className='hover:bg-gray-200 transition ease-in-out delay-75 rounded-md px-2'>
-                    {contributors.length > 0 && (
-                        <div className="flex items-center font-akaya">
-                            <Image
-                                src={contributors[0].avatar_url}
-                                alt={contributors[0].login}
-                                width={64}
-                                height={64}
-                                className="h-16 w-16 border-2 border-primary rounded-full"
-                                priority
-                            />
-                            <div className='flex flex-col'>
-                                <span className="ml-2">by</span>
-                                <span className="ml-2">{contributors[0].login.slice(0, 4)}</span>
+                <Link href='https://www.linkedin.com/in/fariraimasocha'>
+                    <div className='hover:bg-gray-200 transition ease-in-out delay-75 rounded-md px-2'>
+                        {contributors.length > 0 && (
+                            <div className="flex items-center font-akaya">
+                                <Image
+                                    src={contributors[0].avatar_url}
+                                    alt={contributors[0].login}
+                                    width={64}
+                                    height={64}
+                                    className="h-16 w-16 border-2 border-primary rounded-full"
+                                    priority
+                                />
+                                <div className='flex flex-col'>
+                                    <span className="ml-2">by</span>
+                                    <span className="ml-2">{contributors[0].login.slice(0, 4)}</span>
+                                </div>
                             </div>
-                        </div>
-                    )}
-                </div>
+                        )}
+                    </div>
+                </Link>
             </nav>
         </header>
     )
