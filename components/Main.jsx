@@ -33,7 +33,7 @@ export default function Main() {
     };
 
     if (loading) {
-        return <h1 className='text-center font-akaya text-gray-700 text-2xl mt-10'>Loading...</h1>; // Optional loading state
+        return <h1 className='text-center font-akaya animate-pulse text-gray-700 text-2xl mt-10'>Loading...</h1>; // Optional loading state
     }
 
     return (
