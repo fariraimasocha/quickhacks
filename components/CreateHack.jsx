@@ -55,7 +55,7 @@ export default function Component() {
                 <div className="p-6">
                     <h2 className="text-2xl font-bold text-gray-900">Add a hack</h2>
                     <p className="mt-2 text-lg text-gray-600">
-                        We'd love to hear about the hacks you use in your development projects. Add your hack and help other devs.
+                        We&apos;d love to hear about the hacks you use in your development projects. Add your hack and help other devs.
                     </p>
                 </div>
                 <form onSubmit={handleSubmit} className="p-6 pt-0 space-y-4">

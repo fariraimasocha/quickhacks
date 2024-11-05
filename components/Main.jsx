@@ -38,7 +38,7 @@ export default function Main() {
 
     return (
         <section className='mt-20'>
-            <div className='container max-w-3xl flex flex-col space-y-3'>
+            <div className='container mx-auto max-w-3xl flex flex-col space-y-3 px-4'> {/* Added horizontal padding */}
                 {hacks.map(hack => {
                     const createdAt = new Date(hack.createdAt);
                     const now = new Date();
@@ -55,28 +55,28 @@ export default function Main() {
 
                     return (
                         <div key={hack._id} className='rounded-md font-akaya bg-white text-gray-700 px-5 py-5 shadow-md hover:bg-slate-50 transition ease-in-out delay-150'>
-                            <div className='flex justify-between'>
-                                <div>
-                                    <h1 className='text-gray-800'>Title: {hack.title}</h1>
+                            <div className='flex flex-col md:flex-row justify-between'>
+                                <div className='flex-1'>
+                                    <h1 className='text-gray-800 text-lg font-semibold'>Title: {hack.title}</h1>
                                     <p className='text-gray-600'>Description: {hack.description}</p>
                                     <div className='flex space-x-2 mt-3 text-gray-500'>
                                         <p>By {hack.user}</p>
                                         <p>{formattedDate}</p>
-                                        <p>{hack.votes} votes</p> {/* Updated to show votes */}
+                                        <p>{hack.votes} votes</p>
                                     </div>
                                 </div>
-                                <div className='mt-3 flex flex-col space-y-2'>
+                                <div className='mt-3 flex flex-col space-y-3 md:space-y-0 md:space-x-2'>
                                     <button
                                         onClick={() => updateVotes(hack._id, 'add')}
                                         className='hover:scale-150'
                                     >
-                                        <Image src="/fire.png" alt="Upvote" width={30} height={30} />
+                                        <Image src="/fire.png" alt="Upvote" width={28} height={28} />
                                     </button>
                                     <button
                                         onClick={() => updateVotes(hack._id, 'subtract')}
                                         className='hover:scale-150'
                                     >
-                                        <Image src="/poop.png" alt="Downvote" width={24} height={24} />
+                                        <Image src="/poop.png" alt="Downvote" width={22} height={22} />
                                     </button>
                                 </div>
                             </div>

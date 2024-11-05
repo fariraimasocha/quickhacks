@@ -6,7 +6,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/favicon/fav.png" type="image/x-icon" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon.png" />
         <meta property="og:title" content="QuickHacks" />
         <meta property="og:description" content="The place to share programming hacks as developers" />
         <meta property="og:image" content="/landing/quickhacks.png" />
