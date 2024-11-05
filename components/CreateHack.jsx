@@ -2,11 +2,14 @@
 
 import { useState } from 'react'
 import Swal from 'sweetalert2';
+import { useRouter } from 'next/navigation';
+
 
 export default function Component() {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [user, setUser] = useState('fariraijames')
+    const router = useRouter()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -27,7 +30,10 @@ export default function Component() {
                     text: 'Your hack has been submitted successfully.',
                     icon: 'success',
                     position: 'top-end',
-                })
+                }).then(() => {
+                    router.push('/')
+                }
+                )
 
             } else {
                 console.log('Failed to submit hack')

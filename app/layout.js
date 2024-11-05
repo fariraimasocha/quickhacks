@@ -5,6 +5,12 @@ import Header from "@/components/header";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon/fav.png" type="image/x-icon" />
+        <meta property="og:title" content="QuickHacks" />
+        <meta property="og:description" content="The place to share programming hacks as developers" />
+        <meta property="og:image" content="/landing/quickhacks.png" />
+      </head>
       <body
         className='bg-gray-100'
       >
@@ -12,6 +18,6 @@ export default function RootLayout({ children }) {
         <main className='grow'>{children}</main>
         <Footer />
       </body>
-    </html>
+    </html >
   );
 }
