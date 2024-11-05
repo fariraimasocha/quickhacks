@@ -46,7 +46,7 @@ export default function Header() {
                     </div>
                 </Link>
 
-                <div>
+                <div className='hover:bg-gray-200 transition ease-in-out delay-75 rounded-md px-2'>
                     {contributors.length > 0 && (
                         <div className="flex items-center font-akaya">
                             <Image
