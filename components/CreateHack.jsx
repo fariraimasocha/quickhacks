@@ -29,7 +29,6 @@ export default function Component() {
                     title: 'Success!',
                     text: 'Your hack has been submitted successfully.',
                     icon: 'success',
-                    position: 'top-end',
                 }).then(() => {
                     router.push('/')
                 }

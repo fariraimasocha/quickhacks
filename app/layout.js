@@ -1,6 +1,7 @@
 import "./globals.css";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata = {
   title: "QuickHacks",
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
         <main className='grow'>{children}</main>
         <Footer />
       </body>
+      <Analytics />
     </html>
   );
 }
