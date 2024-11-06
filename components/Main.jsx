@@ -33,6 +33,7 @@ export default function Main() {
                 position: 'top-end',
                 timer: 2000,
                 showConfirmButton: false,
+
             });
             return;
         }
