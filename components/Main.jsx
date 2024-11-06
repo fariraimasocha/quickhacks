@@ -28,7 +28,11 @@ export default function Main() {
             Swal.fire({
                 title: 'Error!',
                 text: 'You have already voted on this hack.',
+                toast: true,
                 icon: 'error',
+                position: 'top-end',
+                timer: 2000,
+                showConfirmButton: false,
             });
             return;
         }
@@ -44,6 +48,10 @@ export default function Main() {
                 title: 'Success!',
                 text: `You have ${action === 'add' ? 'upvoted' : 'downvoted'} this hack.`,
                 icon: 'success',
+                toast: true,
+                position: 'top-end',
+                timer: 2000,
+                showConfirmButton: false,
             });
         } catch (error) {
             console.error("Error updating votes:", error);

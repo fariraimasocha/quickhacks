@@ -28,6 +28,10 @@ export default function Component() {
                     title: 'Success!',
                     text: 'Your hack has been submitted successfully.',
                     icon: 'success',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    toast: true,
+                    position: 'top-end',
                 }).then(() => {
                     router.push('/')
                 }
@@ -39,6 +43,10 @@ export default function Component() {
                     title: 'Error!',
                     text: 'An error occurred while submitting the hack.',
                     icon: 'error',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    toast: true,
+                    position: 'top-end',
 
                 })
             }
