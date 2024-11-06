@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Inter var", "system-ui"],
-        akaya: ["Akaya kanadaka", "cursive"],
+        akaya: ["Akaya kanadaka", "sans-serif"],
       },
       colors: {
         background: "var(--background)",
