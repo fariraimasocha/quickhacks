@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 export default function Component() {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
-    const [user, setUser] = useState('fariraijames')
+    const [user, setUser] = useState('')
     const router = useRouter()
 
     const handleSubmit = async (e) => {
