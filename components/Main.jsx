@@ -1,8 +1,9 @@
-"use client"
+'use client'
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Image from 'next/image';
+import Swal from 'sweetalert2';
 
 export default function Main() {
     const [hacks, setHacks] = useState([]);
@@ -21,12 +22,29 @@ export default function Main() {
     }, []);
 
     const updateVotes = async (id, action) => {
+        const hasVoted = localStorage.getItem(`voted_${id}`);
+
+        if (hasVoted) {
+            Swal.fire({
+                title: 'Error!',
+                text: 'You have already voted on this hack.',
+                icon: 'error',
+            });
+            return;
+        }
+
         try {
             const response = await axios.patch('/api/hack', { id, action });
             const updatedHacks = hacks.map(hack =>
                 hack._id === id ? { ...hack, votes: response.data.votes } : hack
             );
             setHacks(updatedHacks);
+            localStorage.setItem(`voted_${id}`, true); // Mark as voted
+            Swal.fire({
+                title: 'Success!',
+                text: `You have ${action === 'add' ? 'upvoted' : 'downvoted'} this hack.`,
+                icon: 'success',
+            });
         } catch (error) {
             console.error("Error updating votes:", error);
         }
